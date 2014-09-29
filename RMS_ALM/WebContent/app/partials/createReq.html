@@ -1,0 +1,154 @@
+<div class="row">
+	<div class="col-md-12">
+		<form class="form-horizontal" role="form" name="reqform" ng-submit="reqformSubmit(reqform.$valid)" novalidate>
+			<fieldset>
+
+				<!-- Form Name -->
+				<legend class="cent">Create Requirement</legend>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">Title
+						<span class="errors" ng-show="reqform.title.$error.required">*</span></label>
+					<div class="col-sm-10  col-xs-10 col-md-3">
+						<input ng-model="req.title" type="text" placeholder="title"
+							class="form-control" name="title" required ng-maxlength="30">
+						<span class="errors" ng-show="reqform.title.$error.maxlength">max length is 30</span>
+					</div>
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">Contributor<span class="errors" ng-show="reqform.contributor.$error.required">*</span></label>
+					<div class="col-sm-10 col-xs-10 col-md-3">
+						<input ng-model="req.contributor" type="text"
+							placeholder="contributor" class="form-control" name="contributor" required ng-maxlength="30">
+						<span class="errors" ng-show="reqform.contributor.$error.maxlength">max length is 30</span>
+					</div>
+
+
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">ShortTitle<span class="errors" ng-show="reqform.shortTitle.$error.required">*</span></label>
+					<div class="col-sm-10 col-xs-10 col-md-3">
+						<input ng-model="req.shortTitle" type="text"
+							placeholder="shortTitle" class="form-control" name="shortTitle" required ng-maxlength="10">
+						<span class="errors" ng-show="reqform.shortTitle.$error.maxlength">max length is 10</span>
+					</div>
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">Creator<span class="errors" ng-show="reqform.creator.$error.required">*</span></label>
+					<div class="col-sm-10 col-xs-10 col-md-3">
+						<input ng-model="req.creator" type="text" placeholder="creator"
+							class="form-control" name="creator" required ng-maxlength="30">
+						<span class="errors" ng-show="reqform.creator.$error.maxlength">max length is 30</span>
+					</div>
+				</div> 
+				<div class="form-group">
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">Description<span class="errors" ng-show="reqform.description.$error.required">*</span></label>
+					<div class="col-sm-10  col-xs-10 col-md-8">
+						<textarea ng-model="req.description" 
+							placeholder="description" class="form-control" name="description" required ng-maxlength="250"></textarea>
+						<span class="errors" ng-show="reqform.description.$error.maxlength">max length is 250</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">Type<span class="errors" ng-show="reqform.type.$error.required">*</span></label>
+					<div class="col-sm-10 col-xs-10 col-md-3">
+						<select ng-model="req.type" class="form-control" name="type" required ng-maxlength="30">
+							<option value="New Feature">New Feature</option>
+							<option value="Enhancement">Enhancement</option>
+							<option value="bug/Issue">bug/Issue</option>
+							<option value="Task">Task</option>
+							<option value="CR">CR</option>
+						</select>
+					</div>
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">Constraints<span class="errors" ng-show="reqform.constraints.$error.required">*</span></label>
+					<div class="col-sm-10 col-xs-10 col-md-3">
+						<input ng-model="req.constraints" type="text"
+							placeholder="constraints" class="form-control" name="constraints" required ng-maxlength="30">
+						<span class="errors" ng-show="reqform.constraints.$error.maxlength">max length is 30</span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">Links<span class="errors" ng-show="reqform.links.$error.required">*</span></label>
+					<div class="col-sm-10 col-xs-10 col-md-3">
+						<input ng-model="req.links" type="text" placeholder="links"
+							class="form-control" name="links" required ng-maxlength="30">
+						<span class="errors" ng-show="reqform.links.$error.maxlength">max length is 30</span>
+					</div>
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">Elaboration<span class="errors" ng-show="reqform.elaboration.$error.required">*</span></label>
+					<div class="col-sm-10 col-xs-10 col-md-3">
+						<input ng-model="req.elaboration" type="text"
+							placeholder="elaboration" class="form-control" name="elaboration" required ng-maxlength="30">
+						<span class="errors" ng-show="reqform.elaboration.$error.maxlength">max length is 30</span>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">ElaboratedBy<span class="errors" ng-show="reqform.elaboratedBy.$error.required">*</span></label>
+					<div class="col-sm-10 col-xs-10 col-md-3">
+						<input ng-model="req.elaboratedBy" type="text"
+							placeholder="elaboratedBy" class="form-control"
+							name="elaboratedBy" required ng-maxlength="30">
+					<span class="errors" ng-show="reqform.elaboratedBy.$error.maxlength">max length is 30</span>
+					</div>
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">Parent</label>
+					<div class="col-sm-10 col-xs-10 col-md-3">
+						<input ng-model="req.parent" type="text" placeholder="parent"
+							class="form-control" name="parent" ng-maxlength="30">
+						<span class="errors" ng-show="reqform.parent.$error.maxlength">max length is 30</span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">Priority<span class="errors" ng-show="reqform.priority.$error.required">*</span></label>
+					<div class="col-sm-10 col-xs-10 col-md-3">
+						<select ng-model="req.priority" class="form-control"
+							name="priority" required ng-maxlength="30">
+							<option value="Blocker">Blocker</option>
+							<option value="Critical">Critical</option>
+							<option value="Major">Major</option>
+							<option value="Minor">Minor</option>
+							<option value="Trivial">Trivial</option>
+							<option value="TBD">TBD</option>
+						</select>
+						</div>
+					<label class="col-sm-2 col-xs-2 col-md-2 control-label"
+						for="textinput">Status<span class="errors" ng-show="reqform.status.$error.required">*</span></label>
+					<div class="col-sm-10 col-xs-10 col-md-3">
+						<select class="form-control" ng-model="req.status" name="status" required ng-maxlength="30">
+							<option value="Open">Open</option>
+							<option value="Assigned">Assigned</option>
+							<option value="Implementation">Implementation</option>
+							<option value="Dev Testing">Dev Testing</option>
+							<option value="Suspended">Suspended</option>
+							<option value="QA Testing">QA Testing</option>
+							<option value="ReOpen">ReOpen</option>
+							<option value="Closed">Closed</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-10 col-xs-10 col-md-8">
+						<div class="pull-right">
+							<button type="submit" class="btn btn-primary">Save</button>
+							<button type="reset" class="btn btn-primary">Reset</button>
+							
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>

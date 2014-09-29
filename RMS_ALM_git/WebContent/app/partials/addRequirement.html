@@ -1,0 +1,85 @@
+<div class="row span12 alert alert-success" ng-show="isSubmitted">
+  <a class="close" data-dismiss="alert">×</a>
+  <strong>Success! </strong>Requirement has been added successfully.
+</div>
+
+<div class="row span12 alert alert-danger" ng-show="isFailure">
+  <a class="close" data-dismiss="alert">×</a>
+  <strong>Failure! </strong>Unable to submit Requirement..
+</div>
+
+<div class="span12">
+<div style="margin-top: 1%; margin-left: 38%; position: relative;">
+  		<div>
+  			<h3 ng-show="newRequirement">NEW Requirement</h3>
+  		</div>
+  </div>
+
+
+  <div style="margin-top: 1%; margin-left: 20%; position: relative;" >
+  <form name="form" class="form-horizontal" novalidate="" style="margin-top: 2%;" >
+    <div class="control-group">
+      <div class="css-form">
+      <label class="control-label" for="inputTitle"> Title</label>
+      <div class="controls">
+      <input id="inputTitle" name="inputTitle" type="text" ng-model="Requirement.Title" class="span4" placeholder="Enter title" required=""/>
+      <span class="error" ng-show="form.inputTitle.$error.required">*</span>
+      </div>
+      
+      <label class="control-label" for="inputDesc"> Description</label>
+      <div class="controls">
+      <input id="inputDesc" name="inputDesc" type="text" ng-model="Requirement.Desc" class="span4" placeholder="Enter Desc" required=""/>
+      <span class="error" ng-show="form.inputDesc.$error.required">*</span>
+      </div>
+      
+      <label class="control-label" for="inputShTitle"> Short Title</label>
+      <div class="controls">
+      <input id="inputShTitle" name="inputShTitle" type="text" ng-model="Requirement.ShortTile" class="span4" placeholder="Enter Short Title" required=""/>
+      <span class="error" ng-show="form.inputShTitle.$error.required">*</span>
+      </div>
+      
+      <label class="control-label" for="inputCreator"> Creator</label>
+      <div class="controls">
+      <input id="inputCreator" name="inputCreator" type="text" ng-model="Requirement.Creator" class="span4" placeholder="Enter Creator" required=""/>
+      <span class="error" ng-show="form.inputCreator.$error.required">*</span>
+      </div>
+  </div>
+  </div>
+
+<div>
+		<button type="button" class="btn" ng-show="newRequirement" data-toggle="modal" data-target="#myModal2" ng-disabled="form.$invalid" style="margin-top: 2%; margin-left: 25%; position: relative;">Add</button>
+</div>
+
+
+  <div id="myModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">          
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times</button>
+            <h3 id="myModalLabel">Confirmation.....</h3>
+          </div>
+          <div class="modal-body">
+            <p>Are you Really sure about this.....</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+          	<a class="btn btn-primary" ng-click="submitRequirement()">Save</a>	     
+          </div>
+        </div>
+    </div>
+</div>
+</form>
+</div>
+
+  
+
+ <style type="text/css">
+      .css-form input.ng-invalid.ng-dirty {
+        background-color: #FBEFEF;
+      }
+    
+      .css-form input.ng-valid.ng-dirty {
+        background-color: #CEF6CE;
+      }
+    </style>
+    
