@@ -4,13 +4,11 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import alm.demo.entity.Requirement;
 import alm.demo.service.RequirementService;
 import alm.demo.service.RequirementServiceImpl;
 
@@ -49,9 +47,11 @@ public class RequirementController {
 			}
 	}
 	
-	@RequestMapping(value="/Requirement/update", method=RequestMethod.POST)
+	@RequestMapping(value="/Update", method=RequestMethod.POST)
 	public String updateRequirement(@RequestBody alm.demo.entity.Requirement Requirement) throws Exception{
 		System.out.println("in updating requirement");
+		System.out.println(Requirement);
+		RequirementService.updateRequirement(Requirement);
 		return "";
 	}
 	

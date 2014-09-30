@@ -8,4 +8,5 @@ import alm.demo.entity.Requirement;
 public interface RequirementService {
 	public boolean addRequirement(Requirement Requirement)throws Exception;
 	public ArrayList<Requirement> getAllRequirements()throws Exception;
+	public boolean updateRequirement(Requirement Requirement)throws Exception;
 }

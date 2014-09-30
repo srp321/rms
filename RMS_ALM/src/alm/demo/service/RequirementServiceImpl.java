@@ -28,4 +28,11 @@ public class RequirementServiceImpl implements RequirementService{
 		// TODO Auto-generated method stub
 		return RequirementDAO.getAllRequirements();
 	}
+	@Override
+	@Transactional
+	public boolean updateRequirement(Requirement Requirement)throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("in update service");
+		return RequirementDAO.updateRequirement(Requirement);
+	}
 }

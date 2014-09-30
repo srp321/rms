@@ -45,6 +45,27 @@ controller('showRequirementsCtrl',["RequirementService","$scope","$routeParams",
 
 controller('updateRequirementCtrl',["RequirementService","$scope","$routeParams", function(RequirementService,$scope,$routeParams) {
 	alert("update Requirement");
+	$scope.isSubmitted = false;
+	$scope.isFailure = false;
+	$scope.Requirement=false;
+	$scope.newRequirement=true;
+	$scope.submit1Update = function() {
+		alert("in submit");
+		RequirementService.submit1($scope.Requirement, function () {
+			alert("submit 2");
+			console.log('scope is', scope);
+			alert("submit 3");
+			$scope.isSubmitted = true;
+			$scope.isFailure = false;
+			$scope.Requirement = {};
+		},
+		function() {
+			$scope.isFailure = true;
+			$scope.isSubmitted = false;
+		});
+		$scope.Requirement = {};
+		$("#myModal2").modal ('hide'); 
+	};
 	$scope.$on('exception',function(e,cause){
 	     $scope.exception = cause;
 	  });

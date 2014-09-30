@@ -22,6 +22,9 @@ public class Requirement {
 
 	@Column(length = 30)
 	private String title;
+	
+	@Column(length = 30)
+	private String subject;
 
 	@Column(length = 250)
 	private String description;
@@ -64,11 +67,10 @@ public class Requirement {
 
 	@Temporal(TemporalType.DATE)
 	private Date modified;
-
 	
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	@Column(length=10)
+	private String version;
+
 	
 	public String getTitle() {
 		return title;
@@ -175,6 +177,22 @@ public class Requirement {
 		this.status = status;
 	}
 	
+	public String getSubject(){
+		return subject;
+	}
+	
+	public void setSubject(String subject){
+		this.subject=subject;
+	}
+	
+	public String getVersion(){
+		return version;
+	}
+	
+	public void setVersion(String version){
+		this.version=version;
+	}
+	
 	
 	public Requirement() {
 		super();
@@ -182,7 +200,7 @@ public class Requirement {
 
 	}
 	
-	
+	/*
 	public Requirement(int id, String title, String description, String shortTitle,
 			String creator, String contributor, Date modified, String type,
 			String constraints, String links, String elaboration,
@@ -204,9 +222,10 @@ public class Requirement {
 		this.priority = priority;
 		this.status = status;
 	}
+	*/
+
 	
-
-
+/*
 	@Override
 	public String toString() {
 		return "Requirement [id=" + id + ", title=" + title + ", description="
@@ -216,6 +235,51 @@ public class Requirement {
 				+ ", links=" + links + ", elaboration=" + elaboration
 				+ ", elaboratedBy=" + elaboratedBy + ", parent=" + parent
 				+ ", priority=" + priority + ", status=" + status + "]";
+	}*/
+
+	public Requirement(Integer id, String title, String subject,
+			String description, String shortTitle, String creator,
+			String contributor, String type, String constraints, String links,
+			String elaboration, String elaboratedBy, String parent,
+			String priority, String status, Date createdOn, Date modified,
+			String version) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.subject = subject;
+		this.description = description;
+		this.shortTitle = shortTitle;
+		this.creator = creator;
+		this.contributor = contributor;
+		this.type = type;
+		this.constraints = constraints;
+		this.links = links;
+		this.elaboration = elaboration;
+		this.elaboratedBy = elaboratedBy;
+		this.parent = parent;
+		this.priority = priority;
+		this.status = status;
+		this.createdOn = createdOn;
+		this.modified = modified;
+		this.version = version;
+	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Requirement [id=" + id + ", title=" + title + ", subject="
+				+ subject + ", description=" + description + ", shortTitle="
+				+ shortTitle + ", creator=" + creator + ", contributor="
+				+ contributor + ", type=" + type + ", constraints="
+				+ constraints + ", links=" + links + ", elaboration="
+				+ elaboration + ", elaboratedBy=" + elaboratedBy + ", parent="
+				+ parent + ", priority=" + priority + ", status=" + status
+				+ ", createdOn=" + createdOn + ", modified=" + modified
+				+ ", version=" + version + "]";
+	}
+	public int getId() {
+		return id;
 	}
 
 }
