@@ -11,6 +11,7 @@ controller('addRequirementCtrl',["$routeParams","RequirementService","$scope", f
 	$scope.newRequirement=true;
 	$scope.submitRequirement = function() {
 		alert("in submit");
+		
 		RequirementService.submit($scope.Requirement, function () {
 			alert("submit 2");
 			console.log('scope is', scope);
@@ -26,17 +27,6 @@ controller('addRequirementCtrl',["$routeParams","RequirementService","$scope", f
 		$scope.Requirement = {};
 		$("#myModal2").modal ('hide'); 
 	};
-    $('input').keyup(function() {
-        this.value = this.value.toUpperCase();
-        makeAllCaps($scope.Requirement);
-      });
-
-    function makeAllCaps(Object) {
-        for (var key in Object) {
-        if(typeof Object[key] == 'number') {}
-        else Object[key] = Object[key].toUpperCase();
-       }
-     }
 }]).
 controller('showRequirementsCtrl',["RequirementService","$scope","$routeParams", function(RequirementService,$scope,$routeParams) {
 	$scope.isException=false;
@@ -44,7 +34,7 @@ controller('showRequirementsCtrl',["RequirementService","$scope","$routeParams",
 	},function(data)
 	{
 		$scope.isException=true;
-		throw { message: 'Project Id Not Found' };	
+		throw { message: 'Not Found' };	
 	});
 	
 	$scope.$on('exception',function(e,cause){

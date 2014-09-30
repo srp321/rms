@@ -28,6 +28,6 @@ public class RequirementDAOImpl implements RequirementDAO {
 	@Override
 	public ArrayList<Requirement> getAllRequirements() throws Exception{
 		// TODO Auto-generated method stub
-		return (ArrayList<Requirement>) emf.createQuery("SELECT re FROM Requirement re" ).getResultList();
+		return (ArrayList<Requirement>) emf.createQuery("SELECT * FROM Requirement" ).getResultList();
 	}
 }

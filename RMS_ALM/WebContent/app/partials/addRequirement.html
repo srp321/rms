@@ -17,36 +17,113 @@
 
 
   <div style="margin-top: 1%; margin-left: 20%; position: relative;" >
-  <form name="form" class="form-horizontal" novalidate="" style="margin-top: 2%;" >
+  
+  
+	<form name="form" class="form-horizontal" novalidate style="margin-top: 2%;" >
+  
     <div class="control-group">
+    
       <div class="css-form">
+      
       <label class="control-label" for="inputTitle"> Title</label>
       <div class="controls">
-      <input id="inputTitle" name="inputTitle" type="text" ng-model="Requirement.Title" class="span4" placeholder="Enter title" required=""/>
-      <span class="error" ng-show="form.inputTitle.$error.required">*</span>
+      <input id="inputTitle" name="inputTitle" type="text" ng-model="Requirement.title" class="span4" placeholder="Enter title" required=""/>
+      <span class="error" ng-show="form.inputTitle.$error.required"><font color="red">*</font></span>
       </div>
       
-      <label class="control-label" for="inputDesc"> Description</label>
+      <label class="control-label" for="inputDescription"> Description</label>
       <div class="controls">
-      <input id="inputDesc" name="inputDesc" type="text" ng-model="Requirement.Desc" class="span4" placeholder="Enter Desc" required=""/>
-      <span class="error" ng-show="form.inputDesc.$error.required">*</span>
+      <input id="inputDescription" name="inputDescription" type="text" ng-model="Requirement.description" class="span4" placeholder="Enter Desc" required=""/>
+      <span class="error" ng-show="form.inputDescription.$error.required"><font color="red">*</font></span>
       </div>
       
-      <label class="control-label" for="inputShTitle"> Short Title</label>
+      <label class="control-label" for="inputShortTitle"> Short Title</label>
       <div class="controls">
-      <input id="inputShTitle" name="inputShTitle" type="text" ng-model="Requirement.ShortTile" class="span4" placeholder="Enter Short Title" required=""/>
-      <span class="error" ng-show="form.inputShTitle.$error.required">*</span>
+      <input id="inputShortTitle" name="inputShortTitle" type="text" ng-model="Requirement.shortTitle" class="span4" placeholder="Enter Short Title" required=""/>
+      <span class="error" ng-show="form.inputShortTitle.$error.required"><font color="red">*</font></span>
       </div>
       
       <label class="control-label" for="inputCreator"> Creator</label>
       <div class="controls">
-      <input id="inputCreator" name="inputCreator" type="text" ng-model="Requirement.Creator" class="span4" placeholder="Enter Creator" required=""/>
-      <span class="error" ng-show="form.inputCreator.$error.required">*</span>
+      <input id="inputCreator" name="inputCreator" type="text" ng-model="Requirement.creator" class="span4" placeholder="Enter Creator" required=""/>
+      <span class="error" ng-show="form.inputCreator.$error.required"><font color="red">*</font></span>
       </div>
+      
+       <label class="control-label" for="inputContributor"> Contributor</label>
+      <div class="controls">
+      <input id="inputContributor" name="inputContributor" type="text" ng-model="Requirement.contributor" class="span4" placeholder="Enter Contributor" required=""/>
+      <span class="error" ng-show="form.inputContributor.$error.required"><font color="red">*</font></span>
+      </div>
+      
+       <label class="control-label" for="inputCreatedOn"> Created On Date</label>
+      <div class="controls">
+      <input id="inputCreatedOn" name="inputCreatedOn" type="date" ng-model="Requirement.createdOn" class="span4" placeholder="Enter Creation Date" required=""/>
+      <span class="error" ng-show="form.inputCreatedOn.$error.required"><font color="red">*</font></span>
+      </div>
+      
+       <label class="control-label" for="inputModified"> Modified On Date</label>
+      <div class="controls">
+      <input id="inputModified" name="inputModified" type="date" ng-model="Requirement.modified" class="span4" placeholder="Enter Modification Date" required=""/>
+      <span class="error" ng-show="form.inputModified.$error.required"><font color="red">*</font></span>
+      </div>
+      
+       <label class="control-label" for="inputType"> Type</label>
+      <div class="controls">
+      <input id="inputType" name="inputType" list="text1" ng-model="Requirement.type" class="span4" placeholder="Type" required=""/>
+      <span class="error" ng-show="form.inputType.$error.required"><font color="red">*</font></span>
+      </div>
+      
+       <label class="control-label" for="inputConstraints"> Constraints</label>
+      <div class="controls">
+      <input id="inputConstraints" name="inputConstraints" type="text" ng-model="Requirement.constraints" class="span4" placeholder="Enter Constraints" required=""/>
+      <span class="error" ng-show="form.inputConstraints.$error.required"><font color="red">*</font></span>
+      </div>
+      
+       <label class="control-label" for="inputLinks"> Links</label>
+      <div class="controls">
+      <input id="inputLinks" name="inputLinks" type="text" ng-model="Requirement.links" class="span4" placeholder="Enter Links" required=""/>
+      <span class="error" ng-show="form.inputLinks.$error.required"><font color="red">*</font></span>
+      </div>
+     
+       <label class="control-label" for="inputElaboration"> Elaboration</label>
+      <div class="controls">
+      <input id="inputElaboration" name="inputElaboration" type="text" ng-model="Requirement.elaboration" class="span4" placeholder="Enter Elaboration" required=""/>
+      <span class="error" ng-show="form.inputElaboration.$error.required"><font color="red">*</font></span>
+      </div>
+      
+       <label class="control-label" for="inputElaboratedBy"> Elaborated By</label>
+      <div class="controls">
+      <input id="inputElaboratedBy" name="inputElaboratedBy" type="text" ng-model="Requirement.elaboratedBy" class="span4" placeholder="Enter Elaborated By" required=""/>
+      <span class="error" ng-show="form.inputElaboratedBy.$error.required"><font color="red">*</font></span>
+      </div>
+      
+       <label class="control-label" for="inputParent"> Parent</label>
+      <div class="controls">
+      <input id="inputParent" name="inputParent" type="text" ng-model="Requirement.parent" class="span4" Value="None(Fresh Requirement)" required=""/>
+      <span class="error" ng-show="form.inputParent.$error.required"></span>
+      </div>
+      
+       <label class="control-label" for="inputPriority"> Priority</label>
+      <div class="controls">
+      <input id="inputPriority" list="text2" name="inputPriority" ng-model="Requirement.priority" class="span4" placeholder="Priority" required=""/>
+      <span class="error" ng-show="form.inputPriority.$error.required"><font color="red">*</font></span>
+      </div>
+      
+      <label class="control-label" for="inputStatus"> Status</label>
+      <div class="controls">
+      <input id="inputStatus" name="inputStatus" list="text3" ng-model="Requirement.status" class="span4" placeholder="Status" required=""/>
+      <span class="error" ng-show="form.inputStatus.$error.required"><font color="red">*</font></span>
+      </div>
+      
+      
+      
+      
+      
   </div>
+  
   </div>
 
-<div>
+<!-- <div>
 		<button type="button" class="btn" ng-show="newRequirement" data-toggle="modal" data-target="#myModal2" ng-disabled="form.$invalid" style="margin-top: 2%; margin-left: 25%; position: relative;">Add</button>
 </div>
 
@@ -67,7 +144,8 @@
           </div>
         </div>
     </div>
-</div>
+</div> -->
+<a class="btn btn-primary" ng-click="submitRequirement()">Save</a>	 
 </form>
 </div>
 
@@ -83,3 +161,31 @@
       }
     </style>
     
+    
+    
+<datalist id="text1">
+  <option value="New Feature">
+  <option value="Enhancement">
+  <option value="Bug/Issue">
+  <option value="Task">
+  <option value="CR">
+  <option value="?">
+</datalist>
+<datalist id="text2">
+  <option value="Blocker">
+  <option value="Critical">
+  <option value="Major">
+  <option value="Minor">
+  <option value="Trivial">
+  <option value="TBD">
+</datalist>
+<datalist id="text3">
+  <option value="Open">
+  <option value="Assignment">
+  <option value="Implementation">
+  <option value="Dev Testing">
+  <option value="Suspended">
+  <option value="QA Testing">
+  <option value="ReOpen">
+  <option value="Closed">
+</datalist>
