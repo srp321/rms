@@ -4,10 +4,13 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import alm.demo.entity.Requirement;
 import alm.demo.service.RequirementService;
 import alm.demo.service.RequirementServiceImpl;
 
@@ -26,7 +29,7 @@ public class RequirementController {
 	}
 	@RequestMapping(value="/Requirement", method=RequestMethod.POST)
 	public String submitRequirement(@RequestBody alm.demo.entity.Requirement Requirement) throws Exception{
-		System.out.println("enter here");
+		System.out.println("in adding new requirement");
 		System.out.println(Requirement);
 		RequirementService.addRequirement(Requirement);
 		return "";
@@ -34,7 +37,7 @@ public class RequirementController {
 	@RequestMapping(value="/RequirementsAll", method=RequestMethod.GET)
 	public @ResponseBody ArrayList<alm.demo.entity.Requirement> getRequirements() throws NumberFormatException, Exception 
 	{		
-		System.out.println("why here also");
+		System.out.println("in viewing all requirement");
 		 ArrayList<alm.demo.entity.Requirement> temp=RequirementService.getAllRequirements();
 			if(temp!=null)
 			{
@@ -45,4 +48,17 @@ public class RequirementController {
 				throw new Exception("ID not Found");
 			}
 	}
+	
+	@RequestMapping(value="/Requirement/update", method=RequestMethod.POST)
+	public String updateRequirement(@RequestBody alm.demo.entity.Requirement Requirement) throws Exception{
+		System.out.println("in updating requirement");
+		return "";
+	}
+	
+	@RequestMapping(value="/Requirement/delete", method=RequestMethod.DELETE)
+	public String deleteRequirement(@RequestBody alm.demo.entity.Requirement Requirement) throws Exception{
+		System.out.println("in deleting requirement");
+		return "";
+	}
+	
 }

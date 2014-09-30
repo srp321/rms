@@ -11,6 +11,7 @@ service('RequirementService', function($resource) {
     return $resource('', {}, {
       getAll: {method:'GET',isArray:true, url:'RequirementsAll'},
       submit: {method:'POST', url:'Requirement'},
+      get: {method:'GET', params: {id: "@id" }, url:'Requirement' + '/:id' },
      
     });
 });

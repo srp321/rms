@@ -19,7 +19,7 @@
   <div style="margin-top: 1%; margin-left: 20%; position: relative;" >
   
   
-	<form name="form" class="form-horizontal" novalidate style="margin-top: 2%;" >
+	<form name="form" class="form-horizontal" style="margin-top: 2%;" novalidate>
   
     <div class="control-group">
     
@@ -27,32 +27,41 @@
       
       <label class="control-label" for="inputTitle"> Title</label>
       <div class="controls">
-      <input id="inputTitle" name="inputTitle" type="text" ng-model="Requirement.title" class="span4" placeholder="Enter title" required=""/>
+      <input id="inputTitle" name="inputTitle" type="text" ng-model="Requirement.title" class="span4" placeholder="Enter title" required ng-maxlength="30" ng-pattern="/^[a-zA-Z]*$/"/>
       <span class="error" ng-show="form.inputTitle.$error.required"><font color="red">*</font></span>
+      <span class="error" ng-show="form.inputTitle.$error.maxlength">max length is 30</span>
+	  <span class="error" ng-show="form.inputTitle.$error.pattern">Oops! Please enter characters.</span>
       </div>
       
       <label class="control-label" for="inputDescription"> Description</label>
       <div class="controls">
-      <input id="inputDescription" name="inputDescription" type="text" ng-model="Requirement.description" class="span4" placeholder="Enter Desc" required=""/>
+      <input id="inputDescription" name="inputDescription" type="text" ng-model="Requirement.description" class="span4" placeholder="Enter Desc" required ng-maxlength="250"/>
       <span class="error" ng-show="form.inputDescription.$error.required"><font color="red">*</font></span>
+      <span class="error" ng-show="form.inputDescription.$error.maxlength">max length is 250</span>
       </div>
       
       <label class="control-label" for="inputShortTitle"> Short Title</label>
       <div class="controls">
-      <input id="inputShortTitle" name="inputShortTitle" type="text" ng-model="Requirement.shortTitle" class="span4" placeholder="Enter Short Title" required=""/>
+      <input id="inputShortTitle" name="inputShortTitle" type="text" ng-model="Requirement.shortTitle" class="span4" placeholder="Enter Short Title" required ng-maxlength="10" ng-pattern="/^[a-zA-Z]*$/"/>
       <span class="error" ng-show="form.inputShortTitle.$error.required"><font color="red">*</font></span>
+      <span class="error" ng-show="form.inputShortTitle.$error.maxlength">max length is 10</span>
+	  <span class="error" ng-show="form.inputShortTitle.$error.pattern">Oops! Please enter characters.</span>
       </div>
       
       <label class="control-label" for="inputCreator"> Creator</label>
       <div class="controls">
-      <input id="inputCreator" name="inputCreator" type="text" ng-model="Requirement.creator" class="span4" placeholder="Enter Creator" required=""/>
+      <input id="inputCreator" name="inputCreator" type="text" ng-model="Requirement.creator" class="span4" placeholder="Enter Creator" required ng-maxlength="30" ng-pattern="/^[a-zA-Z]*$/"/>
       <span class="error" ng-show="form.inputCreator.$error.required"><font color="red">*</font></span>
+      <span class="error" ng-show="form.inputCreator.$error.maxlength">max length is 30</span>
+	  <span class="error" ng-show="form.inputCreator.$error.pattern">Oops! Please enter characters.</span>
       </div>
       
        <label class="control-label" for="inputContributor"> Contributor</label>
       <div class="controls">
-      <input id="inputContributor" name="inputContributor" type="text" ng-model="Requirement.contributor" class="span4" placeholder="Enter Contributor" required=""/>
+      <input id="inputContributor" name="inputContributor" type="text" ng-model="Requirement.contributor" class="span4" placeholder="Enter Contributor" required ng-maxlength="30" ng-pattern="/^[a-zA-Z]*$/"/>
       <span class="error" ng-show="form.inputContributor.$error.required"><font color="red">*</font></span>
+      <span class="error" ng-show="form.inputContributor.$error.maxlength">max length is 30</span>
+	  <span class="error" ng-show="form.inputContributor.$error.pattern">Oops! Please enter characters.</span>
       </div>
       
        <label class="control-label" for="inputCreatedOn"> Created On Date</label>
@@ -75,32 +84,41 @@
       
        <label class="control-label" for="inputConstraints"> Constraints</label>
       <div class="controls">
-      <input id="inputConstraints" name="inputConstraints" type="text" ng-model="Requirement.constraints" class="span4" placeholder="Enter Constraints" required=""/>
+      <input id="inputConstraints" name="inputConstraints" type="text" ng-model="Requirement.constraints" class="span4" placeholder="Enter Constraints" required ng-maxlength="30" ng-pattern="/^[a-zA-Z]*$/"/>
       <span class="error" ng-show="form.inputConstraints.$error.required"><font color="red">*</font></span>
+      <span class="error" ng-show="form.inputConstraints.$error.maxlength">max length is 30</span>
+	  <span class="error" ng-show="form.inputConstraints.$error.pattern">Oops! Please enter characters.</span>
       </div>
       
        <label class="control-label" for="inputLinks"> Links</label>
       <div class="controls">
-      <input id="inputLinks" name="inputLinks" type="text" ng-model="Requirement.links" class="span4" placeholder="Enter Links" required=""/>
+      <input id="inputLinks" name="inputLinks" type="text" ng-model="Requirement.links" class="span4" placeholder="Enter Links" required ng-maxlength="30" ng-pattern="/\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[{};:'.,<>?«»“”‘’]|\]|\?))/ig"/>
       <span class="error" ng-show="form.inputLinks.$error.required"><font color="red">*</font></span>
+      <span class="error" ng-show="form.inputLinks.$error.maxlength">max length is 30</span>
+	  <span class="error" ng-show="form.inputLinks.$error.pattern">Incorrect URL</span>
       </div>
      
        <label class="control-label" for="inputElaboration"> Elaboration</label>
       <div class="controls">
-      <input id="inputElaboration" name="inputElaboration" type="text" ng-model="Requirement.elaboration" class="span4" placeholder="Enter Elaboration" required=""/>
+      <input id="inputElaboration" name="inputElaboration" type="text" ng-model="Requirement.elaboration" class="span4" placeholder="Enter Elaboration" required ng-maxlength="30" ng-pattern="/^[a-zA-Z]*$/"/>
       <span class="error" ng-show="form.inputElaboration.$error.required"><font color="red">*</font></span>
+       <span class="error" ng-show="form.inputElaboration.$error.maxlength">max length is 30</span>
+	  <span class="error" ng-show="form.inputElaboration.$error.pattern">Oops! Please enter characters.</span>
       </div>
       
        <label class="control-label" for="inputElaboratedBy"> Elaborated By</label>
       <div class="controls">
-      <input id="inputElaboratedBy" name="inputElaboratedBy" type="text" ng-model="Requirement.elaboratedBy" class="span4" placeholder="Enter Elaborated By" required=""/>
+      <input id="inputElaboratedBy" name="inputElaboratedBy" type="text" ng-model="Requirement.elaboratedBy" class="span4" placeholder="Enter Elaborated By" required ng-maxlength="30" ng-pattern="/^[a-zA-Z]*$/"/>
       <span class="error" ng-show="form.inputElaboratedBy.$error.required"><font color="red">*</font></span>
+      <span class="error" ng-show="form.inputConstraints.$error.maxlength">max length is 30</span>
+	  <span class="error" ng-show="form.inputConstraints.$error.pattern">Oops! Please enter characters.</span>
       </div>
       
        <label class="control-label" for="inputParent"> Parent</label>
       <div class="controls">
-      <input id="inputParent" name="inputParent" type="text" ng-model="Requirement.parent" class="span4" Value="None(Fresh Requirement)" required=""/>
-      <span class="error" ng-show="form.inputParent.$error.required"></span>
+      <input id="inputParent" name="inputParent" type="text" ng-model="Requirement.parent" class="span4" Value="None(Fresh Requirement)" ng-maxlength="30" ng-pattern="/^[a-zA-Z]*$/"/>
+      <span class="error" ng-show="form.inputParent.$error.maxlength">max length is 30</span>
+	  <span class="error" ng-show="form.inputParent.$error.pattern">Oops! Please enter characters.</span>
       </div>
       
        <label class="control-label" for="inputPriority"> Priority</label>

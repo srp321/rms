@@ -5,7 +5,7 @@ config(['$routeProvider',function($routeProvider) {
     $routeProvider.
         when('/', {
         	templateUrl: 'app/partials/home.html',
-        	controller: 'ProjectList'
+        	controller: 'none'
         	}).
     	when('/project/Requirement/show', {
     		templateUrl: 'app/partials/showRequirement.html',
@@ -14,5 +14,13 @@ config(['$routeProvider',function($routeProvider) {
     	when('/project/Requirement', {
     		templateUrl: 'app/partials/addRequirement.html',
     		controller: 'addRequirementCtrl'
+    		}).
+    	when('/project/Requirement/update', {
+    		templateUrl: 'app/partials/updateRequirement.html',
+    		controller: 'updateRequirementCtrl'
+    		}).
+    	when('/project/Requirement/delete', {
+    		templateUrl: 'app/partials/deleteRequirement.html',
+    		controller: 'deleteRequirementCtrl'
     		})
 }]);    

@@ -13,6 +13,8 @@
   		<li class="active"><a href="#">Home</a></li>
   		<li><a href="#project/Requirement">Add Requirement</a></li>
   		<li><a href="#project/Requirement/show">Show Requirements</a></li>
+  		<li><a href="#project/Requirement/update">Update Requirement</a></li>
+  		<li><a href="#project/Requirement/delete">Delete Requirement</a></li>
 	</ul>
   </div>
   <div ng-view></div>
